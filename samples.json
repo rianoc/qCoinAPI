@@ -1,0 +1,3 @@
+{  "type": "error",  "message": "Reached maximum allowed buffered messages for this connection."}
+{  "type": "trade",  "symbol_id": "BITSTAMP_SPOT_BTC_USD",  "sequence": 2323346,  "time_exchange": "2013-09-28T22:40:50.0000000Z",  "time_coinapi": "2017-03-18T22:42:21.3763342Z",  "uuid": "770C7A3B-7258-4441-8182-83740F3E2457",  "price": 770.000000000,  "size": 0.050000000,  "taker_side": "BUY"}
+{  "type": "quote",  "symbol_id": "BITSTAMP_SPOT_BTC_USD",  "sequence": 2323346,  "time_exchange": "2013-09-28T22:40:50.0000000Z",  "time_coinapi": "2017-03-18T22:42:21.3763342Z",  "ask_price": 770.000000000,  "ask_size": 3252,  "bid_price": 760,  "bid_size": 124}
