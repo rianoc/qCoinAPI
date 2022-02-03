@@ -19,8 +19,8 @@
 .coin.cast.book20:.coin.cast.basic
 .coin.cast.book50:.coin.cast.basic
 .coin.cast.book_l3:.coin.cast.basic
-.coin.cast.ohlcv:.coin.cast.basic,`time_open`time_close`trades_count!(.coin.cast.ts;.coin.cast.ts;`int$)
-.coin.cast.volume:enlist[`time_coinapi]!enlist .coin.cast.ts
+.coin.cast.ohlcv:`symbol_id`time_period_start`time_period_end`time_open`time_close`trades_count!(`$;.coin.cast.ts;.coin.cast.ts;.coin.cast.ts;.coin.cast.ts;`int$)
+.coin.cast.volume:`time_coinapi`period_id!(.coin.cast.ts;`$)
 .coin.cast.exrate:`asset_id_base`asset_id_quote`time!(`$;`$;.coin.cast.ts)
 .coin.cast.reconnect:`within_seconds`before_time!(`int$;.coin.cast.ts)
 

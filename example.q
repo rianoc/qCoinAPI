@@ -35,3 +35,10 @@ config:(!) . flip (
 
 \t 1000
 
+/For book tables
+/Split `asks`bids --> `askPrices`askSizes`bidPrices`bidSizes
+.coin.example.expandAsksBids:{delete asks, bids from update askPrices:asks[;`price],askSizes:asks[;`size],bidPrices:bids[;`price],bidSizes:bids[;`size] from x}
+
+/Volume
+/ volume_by_symbol --> `symbol_id`asset_id_base`asset_id_quote`volume_base`volume_quote (+ungroup)
+.coin.example.expandVolume:{.coin.caster[;`symbol_id`asset_id_base`asset_id_quote!(`$;`$;`$)]raze {(count[y]#enlist x),'y}'[select period_id,time_coinapi from x;x`volume_by_symbol]}
