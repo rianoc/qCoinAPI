@@ -15,5 +15,15 @@ See `example.q` for an example of usage.
 To view example processed messages:
 
 ```q
-.coin.decode each read0 `:samples.json
+@[.coin.decode;;{show x}] each read0 `:samples.json
+```
+
+### Notes
+
+Below steps can avoid SSL issues.
+Full details available on <https://code.kx.com/q/kb/ssl/>
+
+```bash
+export KX_SSL_VERIFY_SERVER=false
+sudo apt-get install -y libssl-dev
 ```

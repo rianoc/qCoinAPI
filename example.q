@@ -13,7 +13,7 @@ config:(!) . flip (
  );
 
 // Define a callback for each message type
-.coin.cb.error:{`error upsert update time:.z.p from x;show first x`message}
+.coin.cb.error:{`error upsert update time:.z.p from x;'first x`message}
 .coin.cb.trade:{`trade upsert x}
 .coin.cb.quote:{`quote upsert x}
 .coin.cb.book:{`book upsert x}
