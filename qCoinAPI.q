@@ -2,7 +2,8 @@
 .coin.handle:0Ni
 .coin.encryption:0b
 .coin.production:0b
-.coin.endpoint:{`$ $[.coin.encryption;":wss://";":ws://"], $[.coin.production;"ws.coinapi.io";"ws-sandbox.coinapi.io"]}
+.coin.domain:"ws.coinapi.io"
+.coin.endpoint:{`$ $[.coin.encryption;":wss://";":ws://"], .coin.domain}
 
 .coin.caster:{[t;d] ![t;();0b;key[d]!{(x;y)}'[value d;key d]]}
 .coin.cast.ts:{"P"$-1_/:x}
@@ -28,8 +29,7 @@
 .coin.cast.reconnect:`within_seconds`before_time!(`int$;.coin.cast.ts)
 
 .coin.init:{[config]
- h:last "/" vs string e:.coin.endpoint[];
- .coin.resp:e "GET /v1 HTTP/1.1\r\nHost: ",h,"\r\nOrigin: ",h,"\r\n\r\n";
+ .coin.resp:.coin.endpoint[] "GET /v1 HTTP/1.1\r\nHost: ",.coin.domain,"\r\nOrigin: ",.coin.domain,"\r\n\r\n";
  .coin.handle:.coin.resp 0;
  neg[.coin.handle] .j.j config
  }
